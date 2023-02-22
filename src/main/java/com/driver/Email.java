@@ -44,7 +44,7 @@ public class Email {
         boolean cLetter = false;
         boolean sLetter = false;
         boolean no = false;
-        boolean splChar = false;
+        boolean specialCharacter = false;
 
         if(password.length() < 8){
             return false;
@@ -59,13 +59,13 @@ public class Email {
                 sLetter = true;
             }
             else if(ch >= '0' && ch <= '9'){
-                return no = true;
+                 no = true;
             }
             else{
-              return splChar = true;
+               specialCharacter = true;
             }
         }
-        if(cLetter && sLetter && no && splChar){
+        if(cLetter && sLetter && no && specialCharacter){
             return true;
         }
         return false;
