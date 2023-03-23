@@ -1,13 +1,12 @@
 package com.driver;
 
 import org.apache.commons.lang3.tuple.Triple;
-
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Gmail extends Email {
 
-    private int inboxCapacity; //maximum number of mails inbox can store
+     int inboxCapacity; //maximum number of mails inbox can store
     private ArrayList<Triple<Date,String,String>> Inbox;   //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
     private ArrayList<Triple<Date,String,String>> Trash;  //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
 
@@ -76,7 +75,7 @@ public class Gmail extends Email {
 
         int cnt = 0;
         for(int i=0; i<Inbox.size(); i++){
-            if((Inbox.get(i).getLeft().compareTo(start) >= 0) && (Inbox.get(i).getLeft().compareTo(start) <= 0)){
+            if((Inbox.get(i).getLeft().compareTo(start) >= 0) && (Inbox.get(i).getLeft().compareTo(end) <= 0)){
                 cnt += 1;
             }
         }
